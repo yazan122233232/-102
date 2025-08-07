@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 تهنئة خاصة لحنين 🎉</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #ffd700;
+      text-shadow: 0 0 5px #ff6;
+    }
+
+    input[type="password"] {
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      width: 220px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 18px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .image-container {
+      margin-top: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    img {
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .download-btn {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #4caf50;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #388e3c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .congrats {
+      font-size: 24px;
+      color: #00e676;
+      margin-top: 30px;
+      text-shadow: 0 0 10px #00e676;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 أدخل كلمة السر لعرض التهنئة</h1>
+  <input type="password" id="password" placeholder="••••••">
+  <br>
+  <button onclick="showContent()">دخول</button>
+
+  <!-- صوت تهنئة -->
+  <audio id="congratsSound" autoplay>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+  </audio>
+
+  <!-- الصور والتهنئة -->
+  <div id="content" class="hidden image-container">
+    <div class="congrats">🌟 مبروك يا حنين! 🌟<br>لقد أبدعتِ فعلًا، ونحن فخورون بكِ كثيرًا ❤️</div>
+
+    <img src="https://i.postimg.cc/k4CvXqjY/Screenshot-20250807-171617.jpg" alt="صورة 1">
+    <br>
+    <a href="https://i.postimg.cc/k4CvXqjY/Screenshot-20250807-171617.jpg" download class="download-btn">📥 تحميل الصورة 1</a>
+
+    <br><br>
+
+    <img src="https://i.postimg.cc/ZK75HHpw/Screenshot-20250807-165011.jpg" alt="صورة 2">
+    <br>
+    <a href="https://i.postimg.cc/ZK75HHpw/Screenshot-20250807-165011.jpg" download class="download-btn">📥 تحميل الصورة 2</a>
+  </div>
+
+  <script>
+    function showContent() {
+      const password = document.getElementById("password").value;
+      if (password === "23") {
+        document.getElementById("content").classList.remove("hidden");
+        document.getElementById("congratsSound").play();
+      } else {
+        alert("❌ كلمة السر غير صحيحة");
+      }
+    }
+  </script>
+
+</body>
+</html>
